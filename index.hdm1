@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#173b3a">
+<title>مصطفی زحمت‌کش | وب‌سایت شخصی</title>
+<style>
+:root{
+ --ink:#193b39; --deep:#102c2c; --teal:#28645c; --turq:#8ab8a8;
+ --gold:#b88746; --gold-light:#e4c995; --paper:#f7f1e5; --paper2:#fffaf1;
+ --muted:#667773; --line:rgba(25,59,57,.15); --white:#fffdf8;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:Tahoma,"Segoe UI",sans-serif;line-height:1.95}
+a{color:inherit;text-decoration:none}
+button{font:inherit}
+.wrap{width:min(1120px,92%);margin:auto}
+.topline{height:5px;background:linear-gradient(90deg,var(--gold),var(--gold-light),var(--teal),var(--gold))}
+header{position:sticky;top:0;z-index:20;background:rgba(247,241,229,.94);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:18px;min-height:78px}
+.brand{display:flex;align-items:center;gap:12px;font-weight:800}
+.brandmark{width:44px;height:44px;border:1px solid var(--gold);border-radius:50% 50% 8px 8px;display:grid;place-items:center;color:var(--gold);font-size:22px;background:var(--paper2);position:relative}
+.brandmark:after{content:"";position:absolute;inset:5px;border:1px solid rgba(184,135,70,.45);border-radius:50% 50% 5px 5px}
+.brand small{display:block;color:var(--muted);font-size:11px;font-weight:400;margin-top:-4px}
+.links{display:flex;align-items:center;gap:22px;font-size:13px}
+.links a:hover{color:var(--gold)}
+.menu-btn{display:none;background:none;border:1px solid var(--line);border-radius:10px;padding:7px 12px;color:var(--ink)}
+.hero{position:relative;overflow:hidden;background:var(--deep);color:#fff9eb;padding:76px 0 72px}
+.hero:before,.hero:after{content:"";position:absolute;pointer-events:none;border:1px solid rgba(228,201,149,.24);transform:rotate(45deg)}
+.hero:before{width:350px;height:350px;left:-140px;top:-130px;box-shadow:0 0 0 18px rgba(228,201,149,.035),0 0 0 38px rgba(228,201,149,.035)}
+.hero:after{width:230px;height:230px;right:-110px;bottom:-100px;box-shadow:0 0 0 16px rgba(228,201,149,.035),0 0 0 34px rgba(228,201,149,.035)}
+.hero-grid{display:grid;grid-template-columns:1.4fr .8fr;align-items:center;gap:45px;position:relative;z-index:1}
+.eyebrow{color:var(--gold-light);font-size:13px;letter-spacing:.2px;display:flex;align-items:center;gap:10px}
+.eyebrow:before{content:"";height:1px;width:34px;background:var(--gold)}
+h1{font-size:clamp(32px,5vw,56px);line-height:1.35;margin:14px 0 18px;letter-spacing:-1px}
+.hero p{max-width:650px;color:#e3e9df;margin:0 0 27px}
+.actions{display:flex;gap:12px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;justify-content:center;padding:10px 19px;border-radius:5px;border:1px solid var(--gold);font-size:13px;transition:.2s}
+.btn.primary{background:var(--gold);color:#1b302b;font-weight:700}
+.btn.ghost{color:#fff9eb}
+.btn:hover{transform:translateY(-2px)}
+.seal-wrap{display:flex;justify-content:center}
+.seal{width:min(270px,75vw);aspect-ratio:1;border:1px solid rgba(228,201,149,.75);border-radius:50%;display:grid;place-items:center;position:relative;background:radial-gradient(circle,rgba(138,184,168,.15),transparent 62%)}
+.seal:before,.seal:after{content:"";position:absolute;inset:13px;border:1px solid rgba(228,201,149,.45);border-radius:50%}
+.seal:after{inset:27px;border-radius:46% 46% 12% 12%;transform:rotate(45deg)}
+.seal-inner{z-index:1;text-align:center}
+.seal .ornament{font-size:46px;color:var(--gold-light);line-height:1.2}
+.seal .seal-title{font-size:13px;color:#f2dfb9;margin-top:8px}
+.seal .seal-sub{font-size:10px;color:#d0d8cc}
+section{padding:72px 0}
+.section-head{max-width:690px;margin-bottom:32px}
+.kicker{color:var(--gold);font-size:12px;font-weight:700}
+h2{font-size:clamp(25px,3vw,35px);margin:5px 0 10px;line-height:1.5}
+.section-head p{color:var(--muted);margin:0}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:38px;align-items:start}
+.about-copy{font-size:15px;color:#465d57}
+.quote{border-right:3px solid var(--gold);padding:14px 18px;margin-top:24px;background:rgba(255,250,241,.7);color:var(--ink)}
+.facts{display:grid;gap:12px}
+.fact{display:flex;gap:14px;padding:17px;background:var(--paper2);border:1px solid var(--line);border-radius:8px}
+.fact-icon{flex:0 0 42px;height:42px;border-radius:50%;display:grid;place-items:center;background:#e7eee5;color:var(--teal);font-size:20px}
+.fact strong{display:block;font-size:14px}
+.fact span{display:block;font-size:12px;color:var(--muted);margin-top:2px}
+.alt{background:#eee7d8}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.card{background:var(--paper2);border:1px solid var(--line);padding:24px;border-radius:8px;position:relative;overflow:hidden}
+.card:before{content:"";position:absolute;left:-25px;top:-25px;width:70px;height:70px;border:1px solid rgba(184,135,70,.35);transform:rotate(45deg)}
+.card-icon{font-size:27px;color:var(--gold)}
+.card h3{font-size:17px;margin:8px 0}
+.card p{font-size:13px;color:var(--muted);margin:0}
+.note{font-size:12px;color:var(--muted);margin-top:18px}
+.writings{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+.writing{padding:22px 24px;border:1px solid var(--line);background:var(--paper2);border-radius:8px}
+.writing .tag{font-size:11px;color:var(--gold);font-weight:bold}
+.writing h3{font-size:16px;margin:7px 0}
+.writing p{font-size:13px;color:var(--muted);margin:0}
+.gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.gallery-item{min-height:165px;border:1px dashed rgba(25,59,57,.28);border-radius:8px;background:linear-gradient(135deg,#e7e0d1,#f9f3e7);display:grid;place-items:center;text-align:center;padding:18px;color:var(--muted);font-size:13px}
+.gallery-item span{display:block;font-size:27px;color:var(--gold);margin-bottom:8px}
+.contact-panel{background:var(--deep);color:#fff9eb;border-radius:12px;padding:34px;display:grid;grid-template-columns:1.2fr .8fr;gap:30px;align-items:center}
+.contact-panel p{color:#d5dfd7;font-size:14px}
+.contact-list{display:grid;gap:10px;font-size:13px}
+.contact-list div{border-bottom:1px solid rgba(255,255,255,.14);padding:7px 0}
+footer{padding:24px 0;border-top:1px solid var(--line);font-size:11px;color:var(--muted)}
+footer .foot{display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap}
+@media(max-width:760px){
+ .nav{min-height:68px}.menu-btn{display:block}.links{display:none;position:absolute;top:68px;right:4%;left:4%;padding:14px;background:var(--paper2);border:1px solid var(--line);border-radius:10px;box-shadow:0 12px 30px #193b3918;flex-direction:column;align-items:stretch;gap:0}
+ .links.open{display:flex}.links a{padding:9px 8px;border-bottom:1px solid var(--line)}.links a:last-child{border:0}
+ .hero{padding:54px 0}.hero-grid{grid-template-columns:1fr;gap:30px}.seal{width:190px}.seal .ornament{font-size:36px}
+ section{padding:52px 0}.about-grid,.contact-panel{grid-template-columns:1fr}.cards{grid-template-columns:1fr}.writings{grid-template-columns:1fr}.gallery{grid-template-columns:1fr 1fr}
+}
+@media(max-width:390px){.gallery{grid-template-columns:1fr}.brand{font-size:13px}.brandmark{width:39px;height:39px}}
+</style>
+</head>
+<body>
+<div class="topline"></div>
+<header>
+ <div class="wrap nav">
+  <a class="brand" href="#home" aria-label="صفحه اصلی">
+   <span class="brandmark">✦</span>
+   <span>مصطفی زحمت‌کش<small>در رویای ایران بزرگ</small></span>
+  </a>
+  <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="navLinks">☰ منو</button>
+  <nav class="links" id="navLinks">
+   <a href="#about">درباره من</a><a href="#activities">فعالیت‌ها</a><a href="#writings">نوشته‌ها</a><a href="#gallery">گالری</a><a href="#contact">ارتباط</a>
+  </nav>
+ </div>
+</header>
+<main>
+<section class="hero" id="home">
+ <div class="wrap hero-grid">
+  <div>
+   <div class="eyebrow">صفحه شخصی</div>
+   <h1>مصطفی زحمت‌کش</h1>
+   <p>اندیشه اسلامی در آموزش و خدمات اجتماعی؛ معلم و دانش‌آموخته کارشناسی ارشد اندیشه سیاسی در اسلام دانشگاه تهران.</p>
+   <div class="actions"><a class="btn primary" href="#about">بیشتر با من آشنا شوید</a><a class="btn ghost" href="#writings">مطالعه نوشته‌ها</a></div>
+  </div>
+  <div class="seal-wrap" aria-hidden="true">
+   <div class="seal"><div class="seal-inner"><div class="ornament">۞</div><div class="seal-title">اندیشه اسلامی · برای تربیت · برای خدمت</div><div class="seal-sub"> آموختن برای اثر گذاشتن</div></div></div>
+  </div>
+ </div>
+</section>
+<section id="about">
+ <div class="wrap">
+  <div class="section-head"><div class="kicker">درباره من</div><h2>از اندیشه تا میدان عمل</h2><p>این صفحه، اشتراکی کوتاه از مسیر آموزشی و تجربه‌های فعالیت اجتماعی است.</p></div>
+  <div class="about-grid">
+   <div class="about-copy">
+    <p>مصطفی زحمت‌کش هستم؛ معلم و دانش‌آموخته کارشناسی ارشد اندیشه سیاسی در اسلام دانشگاه تهران. نگاه من در نقطه تلاقی اندیشه، تربیت و مسئولیت اجتماعی در آینده ای جهانی تعریف می‌شود.</p>
+    <p>حضور در اردوهای جهادی، بخش مهمی از تجربه‌های میدانی من بوده است؛ تجربه‌هایی که فرصت آشنایی نزدیک‌تر با مسائل مردم و معنای خدمت جمعی را فراهم می‌کنند.</p>
+    <div class="quote">«دانستن، زمانی ثمربخش‌تر می‌شود که به تربیت اسلامی، مسئولیت‌پذیری و خدمات اسلامی پیوند بخورد.»</div>
+   </div>
+   <div class="facts">
+    <div class="fact"><div class="fact-icon">✧</div><div><strong>تحصیلات</strong><span>کارشناسی ارشد اندیشه سیاسی در اسلام — دانشگاه تهران</span></div></div>
+    <div class="fact"><div class="fact-icon">⌂</div><div><strong>حوزه فعالیت</strong><span>معلمی شغل انبیاست با افتخار معلم هستم</span></div></div>
+    <div class="fact"><div class="fact-icon">❖</div><div><strong>تجارب میدانی</strong><span>فعال فرهنگی_اجتماعی ، زیست سیاسی و اسلامی، عضوی از جمعیت بزرگ انجمن علمی اندیشه سیاسی اسلامی دانشگاه تهران</span></div></div>
+   </div>
+  </div>
+ </div>
+</section>
+<section class="alt" id="activities">
+ <div class="wrap">
+  <div class="section-head"><div class="kicker">فعالیت‌ها و تجربه‌ها</div><h2>سه مسیر به‌هم‌پیوسته</h2><p>بخش‌هایی برای معرفی فعالیت‌های واقعی و تجربه‌هایی که در ادامه می‌توانید جزئیاتشان را اضافه کنید.</p></div>
+  <div class="cards">
+   <article class="card"><div class="card-icon">✦</div><h3>آموزش و تربیت</h3><p>تجربه معلمی در متوسطه دوم و دغدغه رشد علمی، فکری و اخلاقی نوجوانان.</p></article>
+   <article class="card"><div class="card-icon">۞</div><h3>اندیشه و مطالعه</h3><p>مطالعه و تأمل در اندیشه سیاسی اسلام و نسبت آن با مسائل امروز جامعه.</p></article>
+   <article class="card"><div class="card-icon">❖</div><h3>خدمت اجتماعی</h3><p>تجربه حضور در اردوهای جهادی و فعالیت جمعی در مسیر خدمت‌رسانی.</p></article>
+  </div>
+  <p class="note">برای حفظ دقت، نام مدرسه‌ها، تاریخ‌ها، مسئولیت‌ها و جزئیات اردوها تا زمان دریافت اطلاعات دقیق درج نشده‌اند.</p>
+ </div>
+</section>
+<section id="writings">
+ <div class="wrap">
+  <div class="section-head"><div class="kicker">نوشته‌ها و مطالب</div><h2>یادداشت‌ها و آموخته‌ها</h2><p>در این بخش می‌توانید مقاله‌ها، یادداشت‌های تربیتی و مطالب آموزشی خود را منتشر کنید.</p></div>
+  <div class="writings">
+   <article class="writing"><div class="tag">اندیشه سیاسی</div><h3>عنوان یادداشت اول</h3><p>خلاصه‌ای کوتاه از نوشته را اینجا قرار دهید. این متن نمونه است و می‌توانید آن را ویرایش یا حذف کنید.</p></article>
+   <article class="writing"><div class="tag">آموزش و تربیت</div><h3>عنوان یادداشت دوم</h3><p>برای انتشار نوشته‌های واقعی، عنوان و متن مقاله را جایگزین این نمونه کنید.</p></article>
+   <article class="writing"><div class="tag">تجربه‌های میدانی</div><h3>روایت یک تجربه</h3><p>می‌توانید تجربه‌ها و آموخته‌های خود از اردوهای جهادی را با رعایت حریم خصوصی افراد بنویسید.</p></article>
+   <article class="writing"><div class="tag">مطالب آموزشی</div><h3>یادداشت آموزشی</h3><p>ایده‌ها، منابع و تجربه‌های مفید برای دانش‌آموزان و همکاران آموزشی را اینجا قرار دهید.</p></article>
+  </div>
+  <p class="note">عنوان‌ها و متن‌های این قسمت نمونه‌اند؛ آن‌ها را با نوشته‌های خودتان جایگزین کنید.</p>
+ </div>
+</section>
+<section class="alt" id="gallery">
+ <div class="wrap">
+  <div class="section-head"><div class="kicker">گالری تصاویر</div><h2>تصویرهایی از مسیر</h2><p>جایگاه‌هایی برای افزودن عکس‌های مجاز از فعالیت‌های آموزشی، فرهنگی و جهادی.</p></div>
+  <div class="gallery">
+   <div class="gallery-item"><div><span>▧</span>تصویر فعالیت آموزشی<br><small>با عکس دلخواه جایگزین شود</small></div></div>
+   <div class="gallery-item"><div><span>▧</span>تصویر اردوی جهادی<br><small>با عکس دلخواه جایگزین شود</small></div></div>
+   <div class="gallery-item"><div><span>▧</span>تصویر فعالیت فرهنگی<br><small>با عکس دلخواه جایگزین شود</small></div></div>
+  </div>
+ </div>
+</section>
+<section id="contact">
+ <div class="wrap">
+  <div class="contact-panel">
+   <div><div class="kicker">راه‌های ارتباطی</div><h2>برای گفت‌وگو و همکاری</h2><p>اگر مایلید راه ارتباطی عمومی اضافه کنید، می‌توانید ایمیل حرفه‌ای یا پیوند شبکه اجتماعی خود را در این بخش قرار دهید. فعلاً هیچ اطلاعات تماسی فرضی درج نشده است.</p></div>
+   <div class="contact-list"><div>✉ ایمیل: <span>برای افزودن، این متن را ویرایش کنید</span></div><div>◎ شبکه اجتماعی: <span>پیوند دلخواه را اضافه کنید</span></div><div>↗ همکاری آموزشی یا فرهنگی: <span>از طریق راه ارتباطی ثبت‌شده</span></div></div>
+  </div>
+ </div>
+</section>
+</main>
+<footer><div class="wrap foot"><span>© مصطفی زحمت‌کش</span><span>طراحی با الهام از هندسه و رنگ‌های هنر ایرانی ـ اسلامی</span></div></footer>
+<script>
+const menuBtn=document.getElementById('menuBtn');
+const navLinks=document.getElementById('navLinks');
+menuBtn.addEventListener('click',()=>{
+ const isOpen=navLinks.classList.toggle('open');
+ menuBtn.setAttribute('aria-expanded',String(isOpen));
+});
+navLinks.querySelectorAll('a').forEach(link=>link.addEventListener('click',()=>{
+ navLinks.classList.remove('open');menuBtn.setAttribute('aria-expanded','false');
+}));
+</script>
+</body>
+</html>
